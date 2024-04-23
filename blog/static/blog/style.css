@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --bs-main-green: #42858C;
+    --bs-main-darkgreen: #0B3438;
+    --bs-main-white: #F0F0F0;
+}
+
+* {
+    font-family: "Montserrat Alternates", sans-serif;
+}
+
+.bg-main-green {
+    background-color: var(--bs-main-green);
+}
+
+.text-main-green {
+    color: var(--bs-main-green);
+}
+
+.text-main-darkgreen {
+    color: var(--bs-main-darkgreen);
+}
+
+.btn-main-green {
+    background-color: var(--bs-main-green);
+    color: #fff;
+    border-radius: 999px;
+}
+
+.border-main-green {
+    border: 1px solid var(--bs-main-green);
+}
+
+.bg-main-white {
+    background-color: var(--bs-main-white);
+}
+
+.hr-main-green {
+    border: 1px solid; opacity: 1; margin: 0 auto 15px; color: var(--bs-main-green);
+}
+
+main {
+    min-height: 750px;
+    padding-top: 70px;
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 170px;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.253);
+}
+
+.btn-outline-main {
+    border: 1px solid var(--bs-main-darkgreen);
+    background-color: transparent;
+    color: var(--bs-main-darkgreen);
+    transition: all .2s ease-in-out;
+}
+
+.btn-outline-main:hover, .btn-main {
+    background-color: var(--bs-main-darkgreen);
+    color: var(--bs-main-white);
+}
+
+.btn-main {
+    transition: all .2s ease-in-out;
+}
+.btn-main:hover {
+    background-color: var(--bs-main-green);
+}

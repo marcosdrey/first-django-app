@@ -1,0 +1,30 @@
+{% extends "blog/base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="container my-4">
+    <h1 class="fw-bold text-main-darkgreen mb-2">Are you sure you want to delete this post?</h1>
+    <div class="container border-main-green border-2 shadow bg-white rounded-4 p-4 my-5">
+        <div class="row justify-content-evenly">
+            <div class="col-12">
+                <h3 class="fs-2 text-main-darkgreen fw-bold" style="margin: 0">{{ object.title }}</h3>
+            </div>
+            <div class="col-12 text-end">
+                <p class="fs-5 fw-light">by <strong class="text-main-darkgreen fw-bold">{{ object.author }}</strong> - {{object.date_posted|date:"F d, Y"}}</p>
+            </div>
+            <hr class="col-12 hr-main-green">
+            <div class="col-12">
+                <p class="fs-5 fw-medium">{{ object.content }}</p>
+            </div>
+        </div>
+    </div>
+    <div>
+        <form method="POST">
+            {% csrf_token %}
+            <button class="btn btn-danger btn-lg rounded-5 fs-6 fw-bold text-light me-3" type="submit">Yes, Delete</button>
+            <a href="{% url 'blog-detailed' object.id %}" class="text-decoration-none text-main-darkgreen">I've changed my mind.</a>
+        </form>
+    </div>
+</div>
+
+{% endblock content %}

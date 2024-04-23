@@ -1,0 +1,35 @@
+{% extends "blog/base.html" %}
+{% load static %}
+{% block content %}
+<div style="min-height: 750px; display: flex; align-items: center;">
+    <div class="container border-main-green border-2 shadow bg-white rounded-4 p-4 my-5"
+        style="max-width: 1000px;">
+        <div class="row justify-content-evenly">
+            <div class="col-12">
+                <p class="fs-2 text-main-darkgreen fw-bold" style="margin: 0">What do I’ll find in this site?
+                </p>
+            </div>
+            <div class="col-12 text-end">
+                <p class="fs-5 fw-light">by <strong class="text-main-darkgreen fw-bold">Owner</strong> - Today
+                </p>
+            </div>
+            <hr class="col-12 hr-main-green">
+            <div class="col-12">
+                <p class="fs-5 fw-medium">Hey! You will find out <strong>everything</strong> on our blog, from
+                    the best movies to watch on the weekend to that dessert you want to make so much!</p>
+            </div>
+            <div class="col-12 col-md-5 my-3">
+                <img class="img-fluid rounded-5" src="{% static 'blog/watching-tv-pic.jpg' %}" alt="Picture of someone watching TV"
+                    style="box-shadow: -4px 4px 7px rgba(0, 0, 0, 0.425);">
+            </div>
+            <div class="col-12 col-md-5 mt-3">
+                <img class="img-fluid rounded-5" src="{% static 'blog/dessert-pic.jpg' %}" alt="Picture of a delicious cake"
+                    style="box-shadow: 4px 4px 7px rgba(0, 0, 0, 0.425);">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock content %}

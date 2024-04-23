@@ -1,0 +1,30 @@
+{% extends "blog/base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="container my-4">
+    <h1 class="text-uppercase fw-bold text-main-darkgreen mb-2">{{ object.author }}'s Post:</h1>
+
+    <div class="container border-main-green border-2 shadow bg-white rounded-4 p-4 my-5">
+        <div class="row justify-content-evenly">
+            <div class="col-12 d-flex gap-4">
+                <h3 class="fs-2 text-main-darkgreen fw-bold" style="margin: 0">{{ object.title }}</h3>
+                {% if user == object.author %}
+                <div>
+                    <a href="{% url 'blog-update' object.id %}"><button class="btn btn-info">Update</button></a>
+                    <a href="{% url 'blog-delete' object.id %}"><button class="btn btn-danger">Delete</button></a>
+                </div>
+                {% endif %}
+            </div>
+            <div class="col-12 text-end">
+                <p class="fs-5 fw-light">by <strong class="text-main-darkgreen fw-bold">{{ object.author }}</strong> - {{object.date_posted|date:"F d, Y"}}</p>
+            </div>
+            <hr class="col-12 hr-main-green">
+            <div class="col-12">
+                <p class="fs-5 fw-medium">{{ object.content }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

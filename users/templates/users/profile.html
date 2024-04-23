@@ -1,0 +1,18 @@
+{% extends "blog/base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <div class="container mt-4">
+        <h1>Hello, {{ user.username }}!</h1>
+        <div>
+            <img class="img-fluid" style="height: 60px; width: 60px; border-radius: 50%;" src="{{ user.profile.image.url }}" alt="Image">
+            <p class="fs-3 text-main-green">{{ user.email }}</p>
+        </div>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ upuser_form|crispy }}
+            {{ upprofile_form|crispy }}
+            <button class="btn btn-success" type="submit">Update</button>
+        </form>
+    </div>
+{% endblock content %}
